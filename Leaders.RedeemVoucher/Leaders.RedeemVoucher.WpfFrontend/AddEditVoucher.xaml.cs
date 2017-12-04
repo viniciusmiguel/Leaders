@@ -24,5 +24,10 @@ namespace Leaders.RedeemVoucher.WpfFrontend
         {
             InitializeComponent();
         }
+
+        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
