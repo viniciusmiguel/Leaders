@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Leaders.RedeemVoucher.Domai
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Leaders.RedeemVoucher.Infra", "Leaders.RedeemVoucher.Infra\Leaders.RedeemVoucher.Infra.csproj", "{9912F127-538F-4288-BA87-097BB69E7A7D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Leaders.RedeemVoucher.Injector", "Leaders.RedeemVoucher.Injector\Leaders.RedeemVoucher.Injector.csproj", "{1EA54AE3-DE21-4428-86AE-27846D759873}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,10 @@ Global
 		{9912F127-538F-4288-BA87-097BB69E7A7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9912F127-538F-4288-BA87-097BB69E7A7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9912F127-538F-4288-BA87-097BB69E7A7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EA54AE3-DE21-4428-86AE-27846D759873}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EA54AE3-DE21-4428-86AE-27846D759873}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EA54AE3-DE21-4428-86AE-27846D759873}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EA54AE3-DE21-4428-86AE-27846D759873}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,6 +56,7 @@ Global
 		{C6C15611-7303-484D-8EE6-1E19D5D74907} = {936E3C9F-A151-44E4-8A2F-30C3392295D0}
 		{97D20FD3-D77C-435F-94D2-9887DD8D4031} = {B102054B-2267-4E00-9E57-70544B3A80EC}
 		{9912F127-538F-4288-BA87-097BB69E7A7D} = {33218F19-4FFF-4793-9D40-0DDE17395FB4}
+		{1EA54AE3-DE21-4428-86AE-27846D759873} = {33218F19-4FFF-4793-9D40-0DDE17395FB4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9F061E49-705D-46CD-A408-62214507F95C}

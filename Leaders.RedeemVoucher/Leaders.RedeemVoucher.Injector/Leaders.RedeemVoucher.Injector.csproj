@@ -5,11 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="EntityFramework" Version="6.2.0" />
+    <PackageReference Include="SimpleInjector" Version="4.0.12" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Leaders.RedeemVoucher.App\Leaders.RedeemVoucher.App.csproj" />
     <ProjectReference Include="..\Leaders.RedeemVoucher.Domain\Leaders.RedeemVoucher.Domain.csproj" />
+    <ProjectReference Include="..\Leaders.RedeemVoucher.Infra\Leaders.RedeemVoucher.Infra.csproj" />
   </ItemGroup>
 
 </Project>

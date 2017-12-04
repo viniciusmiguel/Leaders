@@ -52,8 +52,12 @@
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MainWindow.xaml">
+    <Compile Include="VoucherRedeem.xaml.cs">
+      <DependentUpon>VoucherRedeem.xaml</DependentUpon>
+    </Compile>
+    <Page Include="AddEditVoucher.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -61,10 +65,14 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="AddEditVoucher.xaml.cs">
+      <DependentUpon>AddEditVoucher.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="VoucherRedeem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -91,6 +99,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Leaders.RedeemVoucher.App\Leaders.RedeemVoucher.App.csproj">
+      <Project>{c6c15611-7303-484d-8ee6-1e19d5d74907}</Project>
+      <Name>Leaders.RedeemVoucher.App</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Leaders.RedeemVoucher.Injector\Leaders.RedeemVoucher.Injector.csproj">
+      <Project>{1ea54ae3-de21-4428-86ae-27846d759873}</Project>
+      <Name>Leaders.RedeemVoucher.Injector</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
