@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using Leaders.RedeemVoucher.Domain.Entities;
+using System.Data.Entity;
 
 namespace Leaders.RedeemVoucher.Infra.DbContext
 {
@@ -6,7 +7,8 @@ namespace Leaders.RedeemVoucher.Infra.DbContext
     {
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            
+            modelBuilder.Entity<Voucher>().ToTable("tVoucher");
+            modelBuilder.Entity<VoucherHistoricData>().ToTable("tVoucherHis");      
         }
     }
 }
