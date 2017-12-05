@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="MainWindow" WindowStyle="None" Height="579.869" Width="1056.579">
+        Title="MainWindow" WindowStyle="None" Height="443.026" Width="903.947">
     <Window.Resources>
         <Style TargetType="Button">
             <Setter Property="TextBlock.TextAlignment" Value="Center" />
@@ -167,16 +167,16 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="30"></RowDefinition>
             <RowDefinition Height="10"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="0.5*"></RowDefinition>
+            <RowDefinition Height="0.5*"></RowDefinition>
+            <RowDefinition Height="0.5*"></RowDefinition>
+            <RowDefinition Height="0.5*"></RowDefinition>
+            <RowDefinition Height="0.5*"></RowDefinition>
+            <RowDefinition Height="0.5*"></RowDefinition>
+            <RowDefinition Height="0.5*"></RowDefinition>
+            <RowDefinition Height="0.5*"></RowDefinition>
+            <RowDefinition Height="0.5*"></RowDefinition>
+            <RowDefinition Height="0.5*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="40"></RowDefinition>
             <RowDefinition Height="20"></RowDefinition>
@@ -208,8 +208,8 @@
         <TextBox Grid.Row="6" Grid.RowSpan="2" Grid.Column="2" Height="30" Margin="0,0,30,0" BorderBrush="#888" BorderThickness="2"/>
         <TextBox Grid.Row="8" Grid.RowSpan="2" Grid.Column="2" Height="30" Margin="0,0,30,0" BorderBrush="#888" BorderThickness="2"/>
         <TextBox Grid.Row="10" Grid.RowSpan="2" Grid.Column="2" Height="30" Margin="0,0,30,0" BorderBrush="#888" BorderThickness="2"/>
-        <FlowDocumentReader Grid.Row="3" Grid.Column="4" Grid.ColumnSpan="3" Grid.RowSpan="9">
-            <FlowDocument>
+        <FlowDocumentReader Grid.Row="3" Grid.Column="4" Grid.ColumnSpan="5" Grid.RowSpan="9">
+            <FlowDocument PagePadding="0">
                 <Table CellSpacing="0">
                     <Table.Columns>
                         <TableColumn/>
@@ -248,9 +248,22 @@
                 </Table>
             </FlowDocument>
         </FlowDocumentReader>
-        <Button Grid.Row="13" Grid.Column="2" Width="130" Height="35" FontSize="20" FontWeight="DemiBold" Foreground="White">New</Button>
-        <Button Grid.Row="13" Grid.Column="3" Width="130" Height="35" FontSize="20" FontWeight="DemiBold" Foreground="White">Save</Button>
-        <Button Grid.Row="13" Grid.Column="4" Width="130" Height="35" FontSize="20" FontWeight="DemiBold" Foreground="White">Redeem</Button>
-        <Button Grid.Row="13" Grid.Column="6" Width="130" Height="35" FontSize="20" FontWeight="DemiBold" Foreground="White" Click="ButtonBase_OnClick">Close</Button>
+        <Grid Grid.Row="13" Grid.Column="0" Grid.ColumnSpan="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="0.3*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="1" Width="130" Height="35" FontSize="20" FontWeight="DemiBold" Foreground="White">New</Button>
+            <Button Grid.Column="3" Width="130" Height="35" FontSize="20" FontWeight="DemiBold" Foreground="White">Save</Button>
+            <Button Grid.Column="5" Width="130" Height="35" FontSize="20" FontWeight="DemiBold" Foreground="White">Redeem</Button>
+            <Button Grid.Column="7" Width="130" Height="35" FontSize="20" FontWeight="DemiBold" Foreground="White" Click="ButtonBase_OnClick">Close</Button>
+        </Grid>
     </Grid>
 </Window>
