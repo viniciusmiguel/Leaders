@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Input;
+using Leaders.RedeemVoucher.App.Interfaces;
 
 namespace Leaders.RedeemVoucher.WpfFrontend
 {
@@ -8,8 +9,10 @@ namespace Leaders.RedeemVoucher.WpfFrontend
     /// </summary>
     public partial class VoucherRedeem : Window
     {
-        public VoucherRedeem()
+        private readonly IVoucherAppService AppService;
+        public VoucherRedeem(IVoucherAppService appService)
         {
+            AppService = appService;
             InitializeComponent();
         }
 

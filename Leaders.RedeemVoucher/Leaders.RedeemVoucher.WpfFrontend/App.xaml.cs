@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
+using Leaders.RedeemVoucher.Injector;
 
 namespace Leaders.RedeemVoucher.WpfFrontend
 {
@@ -13,5 +8,9 @@ namespace Leaders.RedeemVoucher.WpfFrontend
     /// </summary>
     public partial class App : Application
     {
+        public App()
+        {
+            DependencyInjection.InjectBySimpleInjector();
+        }
     }
 }
