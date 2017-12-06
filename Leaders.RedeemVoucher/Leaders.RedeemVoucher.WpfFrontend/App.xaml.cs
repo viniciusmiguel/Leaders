@@ -8,9 +8,6 @@ namespace Leaders.RedeemVoucher.WpfFrontend
     /// </summary>
     public partial class App : Application
     {
-        public App()
-        {
-            DependencyInjection.InjectBySimpleInjector();
-        }
+
     }
 }

@@ -1,4 +1,5 @@
-﻿using Leaders.RedeemVoucher.App.Interfaces;
+﻿using System;
+using Leaders.RedeemVoucher.App.Interfaces;
 using Leaders.RedeemVoucher.App.Services;
 using Leaders.RedeemVoucher.Domain.Interfaces.Repositories;
 using Leaders.RedeemVoucher.Domain.Interfaces.Services;
@@ -8,13 +9,13 @@ using SimpleInjector;
 
 namespace Leaders.RedeemVoucher.Injector
 {
-    public static class DependencyInjection
+    public class DependencyInjection
     {
-        private static Container Container;
+        private Container Container;
         /// <summary>
         /// Inject Project Using Simple Injector
         /// </summary>
-        public static void InjectBySimpleInjector()
+        public void InjectBySimpleInjector()
         {
             if(Container != null) return;
             
@@ -27,7 +28,29 @@ namespace Leaders.RedeemVoucher.Injector
             Container.Register<IVoucherHistoricDataService, VoucherHistoricDataService>();
 
             Container.Register<IVoucherAppService,VoucherAppService>();
-            Container.Verify();
+        }
+
+        public void RegisterWpfWindow<T>() where T : class 
+        {
+            Container.Register<T>();
+        }
+        public T GetInstance<T>() where T : class
+        {
+            return Container.GetInstance<T>();
+        }
+
+        public bool Verify()
+        {
+            try
+            {
+                Container.Verify();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return false;
+            }
+            return true;
         }
     }
 }

@@ -1,14 +1,20 @@
 ﻿using Leaders.RedeemVoucher.Domain.Entities;
-using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 
 namespace Leaders.RedeemVoucher.Infra.DbContext
 {
-    public class SqlServerContext : System.Data.Entity.DbContext
+    public class SqlServerContext : Microsoft.EntityFrameworkCore.DbContext
     {
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            modelBuilder.Entity<Voucher>().ToTable("tVoucher");
-            modelBuilder.Entity<VoucherHistoricData>().ToTable("tVoucherHis");      
+            optionsBuilder.UseSqlServer("");
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Voucher>().ToTable("tvoucher");
+            modelBuilder.Entity<VoucherHistoricData>().ToTable("tvoucherhis");
+        }
+
     }
 }
