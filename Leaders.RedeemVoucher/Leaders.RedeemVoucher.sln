@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2009
+VisualStudioVersion = 15.0.27130.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - Presentation", "0 - Presentation", "{619E7004-DB00-435E-99EC-E04877F1C7CB}"
 EndProject
@@ -13,13 +13,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Infrastructure", "3 - I
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Leaders.RedeemVoucher.WpfFrontend", "Leaders.RedeemVoucher.WpfFrontend\Leaders.RedeemVoucher.WpfFrontend.csproj", "{91787DB9-B787-460E-8F09-3D17544E756B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Leaders.RedeemVoucher.App", "Leaders.RedeemVoucher.App\Leaders.RedeemVoucher.App.csproj", "{C6C15611-7303-484D-8EE6-1E19D5D74907}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Leaders.RedeemVoucher.App", "Leaders.RedeemVoucher.App\Leaders.RedeemVoucher.App.csproj", "{C6C15611-7303-484D-8EE6-1E19D5D74907}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Leaders.RedeemVoucher.Domain", "Leaders.RedeemVoucher.Domain\Leaders.RedeemVoucher.Domain.csproj", "{97D20FD3-D77C-435F-94D2-9887DD8D4031}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Leaders.RedeemVoucher.Domain", "Leaders.RedeemVoucher.Domain\Leaders.RedeemVoucher.Domain.csproj", "{97D20FD3-D77C-435F-94D2-9887DD8D4031}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Leaders.RedeemVoucher.Infra", "Leaders.RedeemVoucher.Infra\Leaders.RedeemVoucher.Infra.csproj", "{9912F127-538F-4288-BA87-097BB69E7A7D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Leaders.RedeemVoucher.Infra", "Leaders.RedeemVoucher.Infra\Leaders.RedeemVoucher.Infra.csproj", "{9912F127-538F-4288-BA87-097BB69E7A7D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Leaders.RedeemVoucher.Injector", "Leaders.RedeemVoucher.Injector\Leaders.RedeemVoucher.Injector.csproj", "{1EA54AE3-DE21-4428-86AE-27846D759873}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Leaders.RedeemVoucher.Injector", "Leaders.RedeemVoucher.Injector\Leaders.RedeemVoucher.Injector.csproj", "{1EA54AE3-DE21-4428-86AE-27846D759873}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Leaders.RedeemVoucher.Infra.Tests", "Leaders.RedeemVoucher.Infra.Tests\Leaders.RedeemVoucher.Infra.Tests.csproj", "{F6171BD5-592B-4022-8249-A4AC364C9ED3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +49,10 @@ Global
 		{1EA54AE3-DE21-4428-86AE-27846D759873}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1EA54AE3-DE21-4428-86AE-27846D759873}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1EA54AE3-DE21-4428-86AE-27846D759873}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6171BD5-592B-4022-8249-A4AC364C9ED3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6171BD5-592B-4022-8249-A4AC364C9ED3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6171BD5-592B-4022-8249-A4AC364C9ED3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6171BD5-592B-4022-8249-A4AC364C9ED3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -57,6 +63,7 @@ Global
 		{97D20FD3-D77C-435F-94D2-9887DD8D4031} = {B102054B-2267-4E00-9E57-70544B3A80EC}
 		{9912F127-538F-4288-BA87-097BB69E7A7D} = {33218F19-4FFF-4793-9D40-0DDE17395FB4}
 		{1EA54AE3-DE21-4428-86AE-27846D759873} = {33218F19-4FFF-4793-9D40-0DDE17395FB4}
+		{F6171BD5-592B-4022-8249-A4AC364C9ED3} = {33218F19-4FFF-4793-9D40-0DDE17395FB4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9F061E49-705D-46CD-A408-62214507F95C}

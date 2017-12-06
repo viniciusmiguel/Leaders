@@ -7,7 +7,9 @@ namespace Leaders.RedeemVoucher.Infra.DbContext
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("");
+            optionsBuilder.UseSqlServer(@"data source=.\SQLEXPRESS;Integrated Security=SSPI;" +
+                "database = sam4windb;" +
+                "User Instance = true");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

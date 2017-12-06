@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using Leaders.RedeemVoucher.Domain.Interfaces.Entities;
 
 namespace Leaders.RedeemVoucher.Domain.Entities
@@ -11,6 +12,7 @@ namespace Leaders.RedeemVoucher.Domain.Entities
         /// <summary>
         /// The entity identifier
         /// </summary>
+        [Key]
         public int AutoID { get; protected set; }
 
         public Entity() { } //EF Constructor
