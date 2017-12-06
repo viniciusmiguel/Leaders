@@ -5,7 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Leaders.RedeemVoucher.Infra.Tests
 {
     [TestClass]
-    public class EFTests
+    public class EfTests
     {
         [TestMethod]
         public void ContextTest()
