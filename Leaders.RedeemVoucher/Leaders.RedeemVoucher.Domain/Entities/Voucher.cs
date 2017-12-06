@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Leaders.RedeemVoucher.Domain.Interfaces.Entities;
 
 namespace Leaders.RedeemVoucher.Domain.Entities
@@ -9,10 +10,18 @@ namespace Leaders.RedeemVoucher.Domain.Entities
     public class Voucher : Entity, IVoucher
     {
         public Voucher() { } // EF Constructor
-        public Voucher(int autoId, string voucherNo, DateTime dateSold, 
+        public Voucher(string voucherNo, DateTime dateSold,
             double originalAmount, double currentAmount, DateTime lastDateUsed)
         {
-            AutoID = autoId;
+            VoucherNo = voucherNo;
+            DateSold = dateSold;
+            OriginalAmount = originalAmount;
+            CurrentAmount = currentAmount;
+            LastDateUsed = lastDateUsed;
+        }
+        public Voucher(int autoId, string voucherNo, DateTime dateSold, 
+            double originalAmount, double currentAmount, DateTime lastDateUsed) : base(autoId)
+        {
             VoucherNo = voucherNo;
             DateSold = dateSold;
             OriginalAmount = originalAmount;
@@ -39,6 +48,8 @@ namespace Leaders.RedeemVoucher.Domain.Entities
         /// the last day that the voucher was used
         /// </summary>
         public DateTime LastDateUsed { get; protected set; }
+        // Object for EF PK -> FK
+        public IEnumerable<VoucherHistoricData> VoucherHistorics { get; protected set; }
 
         public override string ToString()
         {

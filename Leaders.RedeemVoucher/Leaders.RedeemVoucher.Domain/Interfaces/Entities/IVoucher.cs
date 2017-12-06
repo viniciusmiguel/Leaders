@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using Leaders.RedeemVoucher.Domain.Entities;
 
 namespace Leaders.RedeemVoucher.Domain.Interfaces.Entities
 {
@@ -28,5 +30,6 @@ namespace Leaders.RedeemVoucher.Domain.Interfaces.Entities
         /// The last time the voucher was used
         /// </summary>
         DateTime LastDateUsed { get; }
+        IEnumerable<VoucherHistoricData> VoucherHistorics { get; }
     }
 }
