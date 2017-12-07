@@ -39,15 +39,16 @@ namespace Leaders.RedeemVoucher.WpfFrontend
         {
             if (e.Key != Key.Enter) return;
 
-            if (!AppService.LocateVoucher(ref ViewModel))
-                MessageBox.Show("Voucher Not Found!");
+            var message = AppService.LocateVoucher(ref ViewModel);
+            if(message != null)
+                MessageBox.Show(message);
         }
 
         private void RedeemVoucherClick(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(AppService.TryToRedeemVoucher(ref ViewModel)
-                ? "Voucher Redeemed Sucessfully!"
-                : "Unable to Redeem the Voucher");
+            var message = AppService.TryToRedeemVoucher(ref ViewModel);
+            if (message != null)
+                MessageBox.Show(message);
         }
     }
 }

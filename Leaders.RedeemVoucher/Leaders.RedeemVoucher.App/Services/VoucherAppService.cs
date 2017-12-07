@@ -19,28 +19,28 @@ namespace Leaders.RedeemVoucher.App.Services
             VoucherHistoricDataService = voucherHistoricDataService;
             VoucherHistoricDataRepository = voucherHistoricDataRepository;
         }
-        public bool TryToRedeemVoucher(ref VoucherRedeemViewModel viewModel)
+        public string TryToRedeemVoucher(ref VoucherRedeemViewModel viewModel)
         {
             var voucher = VoucherService.RedeemVoucher(viewModel.VoucherNo);
-            if (voucher?.VoucherNo?.Length < 15) return false;
+            if (voucher?.VoucherNo?.Length < 15) return "Voucher Not Valid";
             
-            return true;
+            return null;
         }
 
-        public bool LocateVoucher(ref VoucherRedeemViewModel viewModel)
+        public string LocateVoucher(ref VoucherRedeemViewModel viewModel)
         {
             var voucher = VoucherRepository.GetByVoucherNo(viewModel.VoucherNo);
-            if (voucher?.VoucherNo?.Length < 15) return false;
+            if (voucher?.VoucherNo?.Length < 15) return "Voucher Not Exists";
 
             viewModel.VoucherNo = voucher.VoucherNo;
             //TODO viewModel.RedeemAccount = !Missing especification!
 
-            return true;
+            return null;
         }
 
         public void GetVoucherDetails(ref AddEditVoucherViewModel viewModel)
         {
-            throw new System.NotImplementedException();
+            
         }
 
         public void GetVoucherList(AddEditVoucherViewModel viewModel)
@@ -48,6 +48,18 @@ namespace Leaders.RedeemVoucher.App.Services
             viewModel.VoucherEntries.Clear();
             foreach (var voucher in VoucherRepository.GetAll())
                 viewModel.VoucherEntries.Add(voucher.VoucherNo);
+        }
+
+        public string UpdateVoucher(ref AddEditVoucherViewModel viewModel)
+        {
+
+            return null;
+        }
+
+        public string CreateVoucher(ref AddEditVoucherViewModel viewModel)
+        {
+
+            return null;
         }
     }
 }

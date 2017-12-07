@@ -30,7 +30,7 @@ namespace Leaders.RedeemVoucher.WpfFrontend
 
         private void VoucherSelectorChanged(object sender, SelectionChangedEventArgs e)
         {
-            
+            AppService.GetVoucherDetails(ref ViewModel);
         }
 
         private void RedeemClick(object sender, RoutedEventArgs e)
@@ -40,12 +40,16 @@ namespace Leaders.RedeemVoucher.WpfFrontend
 
         private void SaveClick(object sender, RoutedEventArgs e)
         {
-            
+            var message = AppService.UpdateVoucher(ref ViewModel);
+            if (message != null)
+                MessageBox.Show(message);
         }
 
         private void NewClick(object sender, RoutedEventArgs e)
         {
-            
+            var message = AppService.CreateVoucher(ref ViewModel);
+            if (message != null)
+                MessageBox.Show(message);
         }
     }
 }
