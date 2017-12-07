@@ -35,7 +35,7 @@ namespace Leaders.RedeemVoucher.WpfFrontend
 
         private void RedeemClick(object sender, RoutedEventArgs e)
         {
-            
+            VoucherRedeem.Show();
         }
 
         private void SaveClick(object sender, RoutedEventArgs e)

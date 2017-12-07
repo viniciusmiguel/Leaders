@@ -32,7 +32,7 @@ namespace Leaders.RedeemVoucher.WpfFrontend
 
         private void CloseClick(object sender, RoutedEventArgs e)
         {
-            Close();
+            Hide();
         }
 
         private void VoucherKeyEvent(object sender, KeyEventArgs e)

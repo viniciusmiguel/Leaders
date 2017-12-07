@@ -7,7 +7,15 @@ namespace Leaders.RedeemVoucher.Infra.Repositories
     {
         public VoucherHistoricData GetByVoucherNo(string voucherNo)
         {
-            return (from voucher in GetAll() where voucher.VoucherNo == voucherNo select voucher).First();
+            try
+            {
+                return (from voucher in GetAll() where voucher.VoucherNo == voucherNo select voucher).First();
+            }
+            catch
+            {
+                return null;
+            }
+            
         }
     }
 }
