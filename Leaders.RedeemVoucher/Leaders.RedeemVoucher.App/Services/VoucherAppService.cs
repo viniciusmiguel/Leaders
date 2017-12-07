@@ -1,5 +1,6 @@
 ﻿using Leaders.RedeemVoucher.App.Interfaces;
 using Leaders.RedeemVoucher.App.ViewModels;
+using Leaders.RedeemVoucher.Domain.Entities;
 using Leaders.RedeemVoucher.Domain.Interfaces.Repositories;
 using Leaders.RedeemVoucher.Domain.Interfaces.Services;
 
@@ -22,7 +23,7 @@ namespace Leaders.RedeemVoucher.App.Services
         public string TryToRedeemVoucher(ref VoucherRedeemViewModel viewModel)
         {
             var voucher = VoucherService.RedeemVoucher(viewModel.VoucherNo);
-            if (voucher?.VoucherNo?.Length < 15) return "Voucher Not Valid";
+            if (voucher == null) return "Voucher Not Valid";
             
             return null;
         }
@@ -30,11 +31,11 @@ namespace Leaders.RedeemVoucher.App.Services
         public string LocateVoucher(ref VoucherRedeemViewModel viewModel)
         {
             var voucher = VoucherRepository.GetByVoucherNo(viewModel.VoucherNo);
-            if (voucher?.VoucherNo?.Length < 15) return "Voucher Not Exists";
-
+            if (voucher == null) return "Voucher Not Exists";
+            viewModel.ButtonRedeem = true;
             viewModel.VoucherNo = voucher.VoucherNo;
             //TODO viewModel.RedeemAccount = !Missing especification!
-
+            //TODO viewModel.Remarks = !Missing especification!
             return null;
         }
 
@@ -52,14 +53,15 @@ namespace Leaders.RedeemVoucher.App.Services
 
         public string UpdateVoucher(ref AddEditVoucherViewModel viewModel)
         {
-
+            var voucher = new Voucher();
+            VoucherService.UpdateVoucher(voucher);
             return null;
         }
 
         public string CreateVoucher(ref AddEditVoucherViewModel viewModel)
         {
-
-            return null;
+            var voucher = new Voucher();
+            return VoucherService.CreateVoucher(voucher); ;
         }
     }
 }

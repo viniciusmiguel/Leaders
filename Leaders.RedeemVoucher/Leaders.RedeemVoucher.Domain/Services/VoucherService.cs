@@ -16,5 +16,15 @@ namespace Leaders.RedeemVoucher.Domain.Services
         {
             throw new System.NotImplementedException();
         }
+
+        public string UpdateVoucher(Voucher voucher)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public string CreateVoucher(Voucher voucher)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
