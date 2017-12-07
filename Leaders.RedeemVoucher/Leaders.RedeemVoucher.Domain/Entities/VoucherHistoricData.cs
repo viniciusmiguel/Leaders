@@ -10,7 +10,7 @@ namespace Leaders.RedeemVoucher.Domain.Entities
     {
         public VoucherHistoricData() { }
         public VoucherHistoricData(int id, string voucherNo, DateTime date, string docketNo,
-            double amount, int posNo, string reference) : base(id)
+            decimal amount, int posNo, string reference) : base(id)
         {
             VoucherNo = voucherNo;
             Date = date;
@@ -20,7 +20,7 @@ namespace Leaders.RedeemVoucher.Domain.Entities
             Reference = reference;
         }
         public VoucherHistoricData(string voucherNo, DateTime date, string docketNo, 
-            double amount, int posNo, string reference)
+            decimal amount, int posNo, string reference)
         {
             VoucherNo = voucherNo;
             Date = date;
@@ -36,7 +36,7 @@ namespace Leaders.RedeemVoucher.Domain.Entities
 
         public string DocketNo { get; protected set; }
 
-        public double Amount { get; protected set; }
+        public decimal Amount { get; protected set; }
 
         public int POSNo { get; protected set; }
 

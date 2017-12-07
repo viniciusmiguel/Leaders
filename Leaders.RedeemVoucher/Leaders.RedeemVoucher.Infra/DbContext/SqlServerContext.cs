@@ -9,7 +9,7 @@ namespace Leaders.RedeemVoucher.Infra.DbContext
         {
             optionsBuilder.UseSqlServer(@"data source=.\SQLEXPRESS;Integrated Security=SSPI;" +
                 "database = sam4windb;" +
-                "User Instance = true");
+                "User Instance = false");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

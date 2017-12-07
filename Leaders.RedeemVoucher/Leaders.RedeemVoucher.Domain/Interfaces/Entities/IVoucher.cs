@@ -21,15 +21,15 @@ namespace Leaders.RedeemVoucher.Domain.Interfaces.Entities
         /// <summary>
         /// Original amount of vouchers
         /// </summary>
-        double OriginalAmount { get; }
+        decimal OriginalAmount { get; }
         /// <summary>
         /// Current amount of vouchers
         /// </summary>
-        double CurrentAmount { get; }
+        decimal? CurrentAmount { get; }
         /// <summary>
         /// The last time the voucher was used
         /// </summary>
-        DateTime LastDateUsed { get; }
+        DateTime? LastDateUsed { get; }
         IEnumerable<VoucherHistoricData> VoucherHistorics { get; }
     }
 }

@@ -23,7 +23,7 @@ namespace Leaders.RedeemVoucher.Domain.Interfaces.Entities
         /// <summary>
         /// Amount of voucher used
         /// </summary>
-        double Amount { get; }
+        decimal Amount { get; }
         /// <summary>
         /// Point of Sale Number
         /// </summary>

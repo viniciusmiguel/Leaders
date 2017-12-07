@@ -12,13 +12,15 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
                         <Border CornerRadius="8" Background="DodgerBlue" BorderBrush="DarkCyan" BorderThickness="2">
-                            <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                            <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" 
+                                              Content="{TemplateBinding Content}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                              Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
                         </Border>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
         </Style>
-        </Window.Resources>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"></RowDefinition>
@@ -47,18 +49,22 @@
                 <ColumnDefinition Width="25"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="0"  VerticalAlignment="Center" FontSize="16" Padding="5">Voucher Redeem</TextBlock>
-            <Ellipse Grid.Column="1" HorizontalAlignment="Center" Height="20" Width="20"   Stroke="#555" VerticalAlignment="Center" MouseUp="Minimize"/>
-            <Ellipse Grid.Column="2" HorizontalAlignment="center" Height="20" Width="20"   Stroke="#555" VerticalAlignment="Center" MouseUp="Maximize"/>
-            <Ellipse Grid.Column="3" HorizontalAlignment="Center" Height="20" Width="20"   Stroke="DodgerBlue" VerticalAlignment="Center" MouseUp="Close"/>
+            <Ellipse Grid.Column="1" HorizontalAlignment="Center" Height="20" Width="20" Stroke="#555" VerticalAlignment="Center" MouseUp="Minimize"/>
+            <Ellipse Grid.Column="2" HorizontalAlignment="center" Height="20" Width="20" Stroke="#555" VerticalAlignment="Center" MouseUp="Maximize"/>
+            <Ellipse Grid.Column="3" HorizontalAlignment="Center" Height="20" Width="20"   
+                     Stroke="DodgerBlue" VerticalAlignment="Center" MouseUp="CloseClick"/>
         </Grid>
         <Border Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="7" BorderThickness="0,1,0,0" BorderBrush="#888"></Border>
         <TextBlock Grid.Column="1" Grid.Row="2" TextAlignment="Right" VerticalAlignment="Center" Margin="5">Voucher No</TextBlock>
         <TextBlock Grid.Column="1" Grid.Row="3" TextAlignment="Right" VerticalAlignment="Center" Margin="5">Redeem Account</TextBlock>
         <TextBlock Grid.Column="1" Grid.Row="4" TextAlignment="Right" VerticalAlignment="Center" Margin="5">Remarks</TextBlock>
-        <TextBox Grid.Column="2" Grid.Row="2" Height="25"></TextBox>
-        <TextBox Grid.Column="2" Grid.Row="3" Height="25"></TextBox>
-        <TextBox Grid.Column="2" Grid.Row="4" Grid.ColumnSpan="3"></TextBox>
-        <Button Grid.Column="3" Grid.ColumnSpan="2" Grid.Row="6" Width="100" Height="30" VerticalContentAlignment="Center" FontSize="20" FontWeight="DemiBold" Foreground="White">Redeem</Button>
-        <Button Grid.Column="5" Grid.Row="6" Width="100" Height="30" FontSize="20" FontWeight="DemiBold" Foreground="White" Click="Close">Close</Button>
+        <TextBox Grid.Column="2" Grid.Row="2" Height="25" KeyUp="VoucherKeyEvent" Text="{Binding VoucherNo}"></TextBox>
+        <TextBox Grid.Column="2" Grid.Row="3" Height="25" Text="{Binding RedeemAccount}"></TextBox>
+        <TextBox Grid.Column="2" Grid.Row="4" Grid.ColumnSpan="3" Text="{Binding Remarks}"></TextBox>
+        <Button Grid.Column="3" Grid.ColumnSpan="2" Grid.Row="6" Width="100" Height="30"
+                VerticalContentAlignment="Center" FontSize="20" FontWeight="DemiBold"
+                Foreground="White" Click="RedeemVoucherClick">Redeem</Button>
+        <Button Grid.Column="5" Grid.Row="6" Width="100" Height="30" FontSize="20" 
+                FontWeight="DemiBold" Foreground="White" Click="CloseClick">Close</Button>
     </Grid>
 </Window>

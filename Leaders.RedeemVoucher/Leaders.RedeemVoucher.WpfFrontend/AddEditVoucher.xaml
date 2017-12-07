@@ -61,7 +61,7 @@
             <Setter Property="ScrollViewer.CanContentScroll" Value="true"/>
             <Setter Property="MinWidth" Value="120"/>
             <Setter Property="MinHeight" Value="20"/>
-            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Foreground" Value="Black"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type ComboBox}">
@@ -140,7 +140,7 @@
         </Style>
         <Style TargetType="{x:Type ComboBoxItem}">
             <Setter Property="SnapsToDevicePixels" Value="true"/>
-            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Foreground" Value="Black"/>
             <Setter Property="OverridesDefaultStyle" Value="true"/>
             <Setter Property="Template">
                 <Setter.Value>
@@ -155,7 +155,7 @@
                                 <Setter TargetName="Border" Property="Background" Value="#FF4F4F4F"/>
                             </Trigger>
                             <Trigger Property="IsEnabled" Value="false">
-                                <Setter Property="Foreground" Value="#888888"/>
+                                <Setter Property="Foreground" Value="White"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -203,7 +203,9 @@
         <TextBlock Grid.Row="6" Grid.RowSpan="2" Grid.Column="1" Padding="0,0,5,0"  VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="14">Original Amount</TextBlock>
         <TextBlock Grid.Row="8" Grid.RowSpan="2" Grid.Column="1" Padding="0,0,5,0"  VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="14">Issued Date</TextBlock>
         <TextBlock Grid.Row="10" Grid.RowSpan="2" Grid.Column="1" Padding="0,0,5,0"  VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="14">Last Used Date</TextBlock>
-        <ComboBox  Grid.Row="2" Grid.Column="2" Grid.RowSpan="2" Height="30"/>
+        <ComboBox  Grid.Row="2" Grid.Column="2" Grid.RowSpan="2" Height="30"
+                   ItemsSource="{Binding Path=VoucherEntries}"
+                   SelectedValue="{Binding Path=VoucherEntry}" SelectionChanged="VoucherSelectorChanged"/>
         <TextBox Grid.Row="4" Grid.RowSpan="2" Grid.Column="2" Height="30" Margin="0,0,30,0" BorderBrush="#555" BorderThickness="2"/>
         <TextBox Grid.Row="6" Grid.RowSpan="2" Grid.Column="2" Height="30" Margin="0,0,30,0" BorderBrush="#888" BorderThickness="2"/>
         <TextBox Grid.Row="8" Grid.RowSpan="2" Grid.Column="2" Height="30" Margin="0,0,30,0" BorderBrush="#888" BorderThickness="2"/>
@@ -260,9 +262,9 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
                 <ColumnDefinition Width="0.3*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="1" Width="130" Height="35" FontSize="20" FontWeight="DemiBold" Foreground="White">New</Button>
-            <Button Grid.Column="3" Width="130" Height="35" FontSize="20" FontWeight="DemiBold" Foreground="White">Save</Button>
-            <Button Grid.Column="5" Width="130" Height="35" FontSize="20" FontWeight="DemiBold" Foreground="White">Redeem</Button>
+            <Button Click="NewClick" Grid.Column="1" Width="130" Height="35" FontSize="20" FontWeight="DemiBold" Foreground="White">New</Button>
+            <Button Click="SaveClick" Grid.Column="3" Width="130" Height="35" FontSize="20" FontWeight="DemiBold" Foreground="White">Save</Button>
+            <Button Click="RedeemClick" Grid.Column="5" Width="130" Height="35" FontSize="20" FontWeight="DemiBold" Foreground="White">Redeem</Button>
             <Button Grid.Column="7" Width="130" Height="35" FontSize="20" FontWeight="DemiBold" Foreground="White" Click="ButtonBase_OnClick">Close</Button>
         </Grid>
     </Grid>

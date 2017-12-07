@@ -11,7 +11,7 @@ namespace Leaders.RedeemVoucher.Domain.Entities
     {
         public Voucher() { } // EF Constructor
         public Voucher(string voucherNo, DateTime dateSold,
-            double originalAmount, double currentAmount, DateTime lastDateUsed)
+            decimal originalAmount, decimal currentAmount, DateTime lastDateUsed)
         {
             VoucherNo = voucherNo;
             DateSold = dateSold;
@@ -20,7 +20,7 @@ namespace Leaders.RedeemVoucher.Domain.Entities
             LastDateUsed = lastDateUsed;
         }
         public Voucher(int autoId, string voucherNo, DateTime dateSold, 
-            double originalAmount, double currentAmount, DateTime lastDateUsed) : base(autoId)
+            decimal originalAmount, decimal currentAmount, DateTime lastDateUsed) : base(autoId)
         {
             VoucherNo = voucherNo;
             DateSold = dateSold;
@@ -39,15 +39,15 @@ namespace Leaders.RedeemVoucher.Domain.Entities
         /// <summary>
         /// The original amount of vouchers
         /// </summary>
-        public double OriginalAmount { get; protected set; }
+        public decimal OriginalAmount { get; protected set; }
         /// <summary>
         /// The current amount of vouchers
         /// </summary>
-        public double CurrentAmount { get; protected set; }
+        public decimal? CurrentAmount { get; protected set; }
         /// <summary>
         /// the last day that the voucher was used
         /// </summary>
-        public DateTime LastDateUsed { get; protected set; }
+        public DateTime? LastDateUsed { get; protected set; }
         // Object for EF PK -> FK
         public IEnumerable<VoucherHistoricData> VoucherHistorics { get; protected set; }
 

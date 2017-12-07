@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Controls;
 using Leaders.RedeemVoucher.App.Interfaces;
 using Leaders.RedeemVoucher.App.ViewModels;
 
@@ -11,17 +12,40 @@ namespace Leaders.RedeemVoucher.WpfFrontend
     {
         private readonly IVoucherAppService AppService;
         private AddEditVoucherViewModel ViewModel;
-        public MainWindow(IVoucherAppService appService)
+        private readonly VoucherRedeem VoucherRedeem;
+        public MainWindow(IVoucherAppService appService, VoucherRedeem voucherRedeem)
         {
             AppService = appService;
             ViewModel = new AddEditVoucherViewModel();
             this.DataContext = ViewModel;
             InitializeComponent();
+            AppService.GetVoucherList(ViewModel);
+            VoucherRedeem = voucherRedeem;
         }
 
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            Close();
+        }
+
+        private void VoucherSelectorChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
+        }
+
+        private void RedeemClick(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void SaveClick(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void NewClick(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }

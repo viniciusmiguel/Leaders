@@ -16,23 +16,38 @@ namespace Leaders.RedeemVoucher.WpfFrontend
         {
             AppService = appService;
             ViewModel = new VoucherRedeemViewModel();
-            this.DataContext = ViewModel;
+            DataContext = ViewModel;
             InitializeComponent();
         }
 
         private void Minimize(object sender, MouseButtonEventArgs e)
         {
-            this.WindowState = WindowState.Minimized;
+            WindowState = WindowState.Minimized;
         }
 
         private void Maximize(object sender, MouseButtonEventArgs e)
         {
-            this.WindowState = WindowState.Maximized;
+            WindowState = WindowState.Maximized;
         }
 
-        private void Close(object sender, RoutedEventArgs e)
+        private void CloseClick(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            Close();
+        }
+
+        private void VoucherKeyEvent(object sender, KeyEventArgs e)
+        {
+            if (e.Key != Key.Enter) return;
+
+            if (!AppService.LocateVoucher(ref ViewModel))
+                MessageBox.Show("Voucher Not Found!");
+        }
+
+        private void RedeemVoucherClick(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(AppService.TryToRedeemVoucher(ref ViewModel)
+                ? "Voucher Redeemed Sucessfully!"
+                : "Unable to Redeem the Voucher");
         }
     }
 }
