@@ -1,6 +1,7 @@
 ﻿using Leaders.RedeemVoucher.Domain.Interfaces.Repositories;
 using Leaders.RedeemVoucher.Infra.DbContext;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Leaders.RedeemVoucher.Infra.Repositories
 {
@@ -34,6 +35,10 @@ namespace Leaders.RedeemVoucher.Infra.Repositories
             return dbContext.Set<T>().Find(id);
         }
 
+        public Task<T> GetByIdAsync(int id)
+        {
+            return dbContext.Set<T>().FindAsync(id);
+        }
         public void Update(T obj)
         {
             

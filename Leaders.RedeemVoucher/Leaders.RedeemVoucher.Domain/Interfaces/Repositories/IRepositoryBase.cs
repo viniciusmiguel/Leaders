@@ -1,6 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Leaders.RedeemVoucher.Domain.Interfaces.Repositories
 {
@@ -21,6 +20,12 @@ namespace Leaders.RedeemVoucher.Domain.Interfaces.Repositories
         /// <param name="id">The index</param>
         /// <returns>The object</returns>
         T GetById(int id);
+        /// <summary>
+        /// Get data by index asyncronously
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        Task<T> GetByIdAsync(int id);
         /// <summary>
         /// Get the list of all objects
         /// </summary>
